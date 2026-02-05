@@ -2,7 +2,7 @@
   "hooks": [
     {
       "name": "check-working-backwards-approval",
-      "description": "코드 수정 전 PRFAQ와 PRD 승인 상태를 확인합니다",
+      "description": "Checks PRFAQ and PRD approval status before code modification",
       "event": "PreToolUse",
       "tools": ["Write", "Edit"],
       "command": "bash hooks/scripts/check-approval.sh \"$TOOL_INPUT\""

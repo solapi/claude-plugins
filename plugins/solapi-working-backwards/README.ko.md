@@ -2,6 +2,8 @@
 
 Amazon의 **Working Backwards** 철학을 Claude Code에서 강제 적용하는 플러그인입니다.
 
+[English Documentation](./README.md)
+
 > "고객에서 출발하여 역으로 작업하면서 최소한의 기술 요구사항에 도달"
 
 ## 개요
@@ -19,7 +21,7 @@ Amazon의 **Working Backwards** 철학을 Claude Code에서 강제 적용하는 
 git clone https://github.com/solapi/claude-plugins.git
 
 # Claude Code 실행 시 플러그인 로드
-claude --plugin-dir ./claude-plugins/solapi-working-backwards
+claude --plugin-dir ./claude-plugins/plugins/solapi-working-backwards
 ```
 
 ## 워크플로우
@@ -173,12 +175,14 @@ solapi-working-backwards/
 │   ├── doc-list.md
 │   └── doc-status.md
 ├── agents/
-│   └── validator.md          # 검증 전문 에이전트
+│   ├── validator.md          # 검증 전문 에이전트
+│   └── interviewer.md        # 인터뷰 에이전트
 ├── hooks/
 │   ├── hooks.json
 │   └── scripts/
 │       └── check-approval.sh
-└── README.md
+├── README.md                 # 영문 문서
+└── README.ko.md              # 한국어 문서 (이 파일)
 ```
 
 ## FAQ

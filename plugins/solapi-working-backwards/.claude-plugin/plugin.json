@@ -1,0 +1,8 @@
+{
+  "name": "solapi-working-backwards",
+  "description": "Enforces Amazon's Working Backwards philosophy in Claude Code. Requires writing and validating PRFAQ and PRD documents before implementing features.",
+  "author": {
+    "name": "SOLAPI",
+    "email": "support@solapi.com"
+  }
+}

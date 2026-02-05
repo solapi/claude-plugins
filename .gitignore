@@ -1,0 +1,5 @@
+*.DS_Store
+.claude/
+.context/
+node_modules/
+*.log

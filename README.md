@@ -1,37 +1,61 @@
 # SOLAPI Claude Plugins
 
-SOLAPI에서 제공하는 Claude Code 플러그인 모음입니다.
+A collection of Claude Code plugins provided by SOLAPI.
+
+[한국어 문서 (Korean)](./README.ko.md)
 
 ## Quick Start
 
-**1. 플러그인 마켓플레이스 추가**
+**1. Add Plugin Marketplace**
 ```
 /plugin marketplace add https://github.com/solapi/claude-plugins
 ```
 
-**2. 플러그인 설치**
+**2. Install Plugin**
 ```
-/plugin install solapi-plugins
+/plugin install solapi-working-backwards
 ```
 
-**3. 사용 시작**
+**3. Start Using**
 ```
-# Working Backwards 플러그인으로 새 PRFAQ 생성
+# Create new PRFAQ with Working Backwards plugin
 /solapi-working-backwards:prfaq-new
 
-# PRD 문서 생성
+# Create PRD document
 /solapi-working-backwards:prd-new
 
-# 문서 상태 확인
+# Check document status
 /solapi-working-backwards:doc-status
 ```
 
-## 플러그인 목록
+## Plugin List
 
-| 플러그인 | 설명 | 버전 |
-|---------|------|------|
-| [solapi-working-backwards](./solapi-working-backwards/) | Amazon의 Working Backwards 철학 적용 | 1.0.0 |
+| Plugin | Description |
+|--------|-------------|
+| [solapi-working-backwards](./plugins/solapi-working-backwards/) | Applies Amazon's Working Backwards philosophy |
 
-## 라이선스
+## Structure
+
+```
+solapi-plugins/
+├── .claude-plugin/
+│   └── marketplace.json      # Marketplace configuration
+├── plugins/
+│   └── solapi-working-backwards/
+│       ├── .claude-plugin/
+│       │   └── plugin.json   # Plugin metadata
+│       ├── agents/           # Agent definitions
+│       ├── commands/         # Slash commands
+│       ├── hooks/            # Pre/Post tool hooks
+│       └── skills/           # Skill definitions
+├── README.md                 # This file (English)
+└── README.ko.md              # Korean documentation
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
 
 MIT License

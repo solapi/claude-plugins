@@ -1,34 +1,34 @@
 #!/bin/bash
 #
-# Working Backwards 승인 상태 확인 스크립트
+# Working Backwards Approval Status Check Script
 #
-# 코드 수정 전 PRFAQ와 PRD가 모두 승인되었는지 확인합니다.
-# 승인되지 않은 경우 구현을 차단합니다.
+# Checks that both PRFAQ and PRD are approved before code modification.
+# Blocks implementation if not approved.
 #
 
-# 도구 입력에서 파일 경로 추출
+# Extract file path from tool input
 TOOL_INPUT="$1"
 
-# JSON에서 file_path 추출 시도
+# Try to extract file_path from JSON
 if command -v jq &> /dev/null; then
     FILE_PATH=$(echo "$TOOL_INPUT" | jq -r '.file_path // empty' 2>/dev/null)
 fi
 
-# jq가 없거나 실패한 경우 grep으로 시도
+# If jq is not available or failed, try with grep
 if [ -z "$FILE_PATH" ]; then
     FILE_PATH=$(echo "$TOOL_INPUT" | grep -oP '"file_path"\s*:\s*"\K[^"]+' 2>/dev/null)
 fi
 
-# 그래도 없으면 입력 자체를 경로로 사용
+# If still empty, use the input itself as the path
 if [ -z "$FILE_PATH" ]; then
     FILE_PATH="$TOOL_INPUT"
 fi
 
-# 제외할 경로 패턴 확인
+# Check if path should be excluded
 is_excluded_path() {
     local path="$1"
 
-    # 제외 패턴들
+    # Exclusion patterns
     local patterns=(
         "docs/working-backwards/"
         "\.md$"
@@ -51,19 +51,19 @@ is_excluded_path() {
 
     for pattern in "${patterns[@]}"; do
         if echo "$path" | grep -qiE "$pattern"; then
-            return 0  # 제외됨
+            return 0  # Excluded
         fi
     done
 
-    return 1  # 제외 아님
+    return 1  # Not excluded
 }
 
-# 제외 경로면 통과
+# Pass if excluded path
 if is_excluded_path "$FILE_PATH"; then
     exit 0
 fi
 
-# 프로젝트 루트 찾기
+# Find project root
 find_project_root() {
     local current="$PWD"
     while [ "$current" != "/" ]; do
@@ -79,34 +79,34 @@ find_project_root() {
 PROJECT_ROOT=$(find_project_root)
 DOCS_DIR="$PROJECT_ROOT/docs/working-backwards"
 
-# Working Backwards 문서 디렉토리 확인
+# Check Working Backwards document directory
 if [ ! -d "$DOCS_DIR" ]; then
     cat << 'EOF'
-⚠️ Working Backwards 프로세스 필요
+⚠️ Working Backwards Process Required
 
-코드를 수정하기 전에 PRFAQ와 PRD 문서가 필요합니다.
+PRFAQ and PRD documents are required before modifying code.
 
-다음 단계:
-1. `/solapi-working-backwards:prfaq-new [기능명]` 명령으로 PRFAQ를 작성하세요.
-2. PRFAQ 승인 후 PRD를 작성하세요.
-3. PRD 승인 후 구현을 시작하세요.
+Next steps:
+1. Create a PRFAQ with `/solapi-working-backwards:prfaq-new [feature_name]` command.
+2. After PRFAQ approval, create a PRD.
+3. After PRD approval, start implementation.
 
-Working Backwards 철학:
-"고객에서 출발하여 역으로 작업하면서 최소한의 기술 요구사항에 도달"
+Working Backwards Philosophy:
+"Start from the customer and work backwards to reach the minimum technical requirements"
 EOF
     exit 1
 fi
 
-# 문서에서 Status 추출
+# Extract Status from document
 get_status() {
     local file="$1"
     if [ -f "$file" ]; then
-        # **Status**: Approved 또는 > **Status**: Approved 형식 찾기
+        # Find **Status**: Approved or > **Status**: Approved format
         grep -oP '\*\*Status\*\*:\s*\K\w+' "$file" 2>/dev/null | head -1
     fi
 }
 
-# PRFAQ 상태 확인
+# Check PRFAQ status
 PRFAQ_EXISTS=false
 PRFAQ_APPROVED=false
 PRFAQ_FILES=()
@@ -124,7 +124,7 @@ for file in "$DOCS_DIR"/PRFAQ-*.md; do
     fi
 done
 
-# PRD 상태 확인
+# Check PRD status
 PRD_EXISTS=false
 PRD_APPROVED=false
 PRD_FILES=()
@@ -142,22 +142,22 @@ for file in "$DOCS_DIR"/PRD-*.md; do
     fi
 done
 
-# 모두 승인되었으면 통과
+# Pass if all approved
 if [ "$PRFAQ_APPROVED" = true ] && [ "$PRD_APPROVED" = true ]; then
     exit 0
 fi
 
-# 미승인 상태 - 구현 차단
-echo "❌ 구현이 차단되었습니다"
+# Not approved - block implementation
+echo "❌ Implementation blocked"
 echo ""
-echo "Working Backwards 프로세스가 완료되지 않았습니다."
+echo "Working Backwards process is not complete."
 echo ""
 
-# PRFAQ 상태 출력
-echo "📋 PRFAQ 상태:"
+# Output PRFAQ status
+echo "📋 PRFAQ Status:"
 if [ "$PRFAQ_EXISTS" = false ]; then
-    echo "   ❌ PRFAQ 문서 없음"
-    echo "   → \`/solapi-working-backwards:prfaq-new [기능명]\` 명령으로 작성하세요."
+    echo "   ❌ No PRFAQ document"
+    echo "   → Create one with \`/solapi-working-backwards:prfaq-new [feature_name]\` command."
 else
     for i in "${!PRFAQ_FILES[@]}"; do
         file="${PRFAQ_FILES[$i]}"
@@ -169,20 +169,20 @@ else
         fi
     done
     if [ "$PRFAQ_APPROVED" = false ]; then
-        echo "   → \`/solapi-working-backwards:prfaq-validate\` 명령으로 검증하세요."
+        echo "   → Validate with \`/solapi-working-backwards:prfaq-validate\` command."
     fi
 fi
 
 echo ""
 
-# PRD 상태 출력
-echo "📋 PRD 상태:"
+# Output PRD status
+echo "📋 PRD Status:"
 if [ "$PRD_EXISTS" = false ]; then
-    echo "   ❌ PRD 문서 없음"
+    echo "   ❌ No PRD document"
     if [ "$PRFAQ_APPROVED" = true ]; then
-        echo "   → \`/solapi-working-backwards:prd-new [기능명]\` 명령으로 작성하세요."
+        echo "   → Create one with \`/solapi-working-backwards:prd-new [feature_name]\` command."
     else
-        echo "   → PRFAQ 승인 후 PRD를 작성할 수 있습니다."
+        echo "   → You can create a PRD after PRFAQ is approved."
     fi
 else
     for i in "${!PRD_FILES[@]}"; do
@@ -195,11 +195,11 @@ else
         fi
     done
     if [ "$PRD_APPROVED" = false ]; then
-        echo "   → \`/solapi-working-backwards:prd-validate\` 명령으로 검증하세요."
+        echo "   → Validate with \`/solapi-working-backwards:prd-validate\` command."
     fi
 fi
 
 echo ""
-echo "PRFAQ와 PRD가 모두 Approved 상태일 때만 코드 작성이 허용됩니다."
+echo "Code writing is only allowed when both PRFAQ and PRD are in Approved status."
 
 exit 1

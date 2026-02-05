@@ -1,19 +1,22 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "solapi-plugins",
-  "displayName": "SOLAPI Plugins",
-  "version": "1.0.0",
-  "description": "SOLAPI에서 제공하는 Claude Code 플러그인 모음",
-  "author": "SOLAPI",
-  "repository": "https://github.com/solapi/claude-plugins",
-  "homepage": "https://github.com/solapi/claude-plugins",
-  "license": "MIT",
+  "description": "A collection of Claude Code plugins provided by SOLAPI",
+  "owner": {
+    "name": "SOLAPI",
+    "email": "support@solapi.com"
+  },
   "plugins": [
     {
       "name": "solapi-working-backwards",
-      "displayName": "Solapi Working Backwards",
-      "source": "./solapi-working-backwards",
-      "version": "1.0.0",
-      "description": "Amazon의 Working Backwards 철학을 Claude Code에서 강제 적용하는 플러그인"
+      "description": "Enforces Amazon's Working Backwards philosophy in Claude Code. Requires PRFAQ and PRD documents before implementing features.",
+      "author": {
+        "name": "SOLAPI",
+        "email": "support@solapi.com"
+      },
+      "source": "./plugins/solapi-working-backwards",
+      "category": "productivity",
+      "homepage": "https://github.com/solapi/claude-plugins/tree/main/plugins/solapi-working-backwards"
     }
   ]
 }
