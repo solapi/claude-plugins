@@ -1,8 +1,25 @@
 {
   "name": "solapi-working-backwards",
+  "displayName": "Solapi Working Backwards",
+  "version": "1.0.0",
   "description": "Enforces Amazon's Working Backwards philosophy in Claude Code. Requires writing and validating PRFAQ and PRD documents before implementing features.",
   "author": {
     "name": "SOLAPI",
     "email": "support@solapi.com"
-  }
+  },
+  "repository": "https://github.com/solapi/claude-plugins/tree/main/plugins/solapi-working-backwards",
+  "homepage": "https://github.com/solapi/claude-plugins/tree/main/plugins/solapi-working-backwards",
+  "license": "MIT",
+  "keywords": ["working-backwards", "prfaq", "prd", "amazon", "product-management"],
+  "skills": ["skills/solapi-working-backwards"],
+  "commands": [
+    "commands/prfaq-new.md",
+    "commands/prfaq-validate.md",
+    "commands/prd-new.md",
+    "commands/prd-validate.md",
+    "commands/doc-list.md",
+    "commands/doc-status.md"
+  ],
+  "agents": ["agents/validator.md", "agents/interviewer.md"],
+  "hooks": "hooks/hooks.json"
 }
