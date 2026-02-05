@@ -63,7 +63,7 @@ solapi-plugins/
    ```
 
 3. 마켓플레이스에 등록
-   ```json
+   ```jsonc
    // .claude-plugin/marketplace.json의 plugins 배열에 추가
    {
      "name": "new-plugin",
@@ -98,7 +98,7 @@ plugin-name/
 
 ### plugin.json 필수 필드
 
-```json
+```jsonc
 {
   "name": "plugin-name",        // 고유 ID (kebab-case)
   "version": "1.0.0",           // Semantic versioning
