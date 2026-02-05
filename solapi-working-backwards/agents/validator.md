@@ -1,6 +1,6 @@
 ---
-name: validator
 description: PRFAQ 및 PRD 문서를 검증하고 반려/승인 결과를 반환하는 전문 에이전트
+capabilities: ["prfaq-validation", "prd-validation", "document-review", "feedback-generation"]
 ---
 
 # Working Backwards 검증 에이전트
