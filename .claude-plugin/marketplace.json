@@ -1,16 +1,18 @@
 {
   "name": "solapi-plugins",
-  "displayName": "SOLAPI Plugins",
-  "version": "1.0.0",
-  "description": "SOLAPI에서 제공하는 Claude Code 플러그인 모음",
-  "author": "SOLAPI",
-  "repository": "https://github.com/solapi/claude-plugins",
-  "homepage": "https://github.com/solapi/claude-plugins",
-  "license": "MIT",
+  "owner": {
+    "name": "SOLAPI"
+  },
+  "metadata": {
+    "description": "SOLAPI에서 제공하는 Claude Code 플러그인 모음",
+    "version": "1.0.0",
+    "repository": "https://github.com/solapi/claude-plugins",
+    "homepage": "https://github.com/solapi/claude-plugins",
+    "license": "MIT"
+  },
   "plugins": [
     {
       "name": "solapi-working-backwards",
-      "displayName": "Solapi Working Backwards",
       "source": "./solapi-working-backwards",
       "version": "1.0.0",
       "description": "Amazon의 Working Backwards 철학을 Claude Code에서 강제 적용하는 플러그인"
