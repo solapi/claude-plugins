@@ -12,6 +12,6 @@
   "keywords": ["working-backwards", "prfaq", "prd", "amazon", "product-management"],
   "skills": "./skills/",
   "commands": "./commands/",
-  "agents": "./agents/",
+  "agents": ["./agents/"],
   "hooks": "./hooks/hooks.json"
 }
