@@ -87,7 +87,7 @@ if [ ! -d "$DOCS_DIR" ]; then
 코드를 수정하기 전에 PRFAQ와 PRD 문서가 필요합니다.
 
 다음 단계:
-1. `/working-backwards:prfaq-new [기능명]` 명령으로 PRFAQ를 작성하세요.
+1. `/solapi-working-backwards:prfaq-new [기능명]` 명령으로 PRFAQ를 작성하세요.
 2. PRFAQ 승인 후 PRD를 작성하세요.
 3. PRD 승인 후 구현을 시작하세요.
 
@@ -157,7 +157,7 @@ echo ""
 echo "📋 PRFAQ 상태:"
 if [ "$PRFAQ_EXISTS" = false ]; then
     echo "   ❌ PRFAQ 문서 없음"
-    echo "   → \`/working-backwards:prfaq-new [기능명]\` 명령으로 작성하세요."
+    echo "   → \`/solapi-working-backwards:prfaq-new [기능명]\` 명령으로 작성하세요."
 else
     for i in "${!PRFAQ_FILES[@]}"; do
         file="${PRFAQ_FILES[$i]}"
@@ -169,7 +169,7 @@ else
         fi
     done
     if [ "$PRFAQ_APPROVED" = false ]; then
-        echo "   → \`/working-backwards:prfaq-validate\` 명령으로 검증하세요."
+        echo "   → \`/solapi-working-backwards:prfaq-validate\` 명령으로 검증하세요."
     fi
 fi
 
@@ -180,7 +180,7 @@ echo "📋 PRD 상태:"
 if [ "$PRD_EXISTS" = false ]; then
     echo "   ❌ PRD 문서 없음"
     if [ "$PRFAQ_APPROVED" = true ]; then
-        echo "   → \`/working-backwards:prd-new [기능명]\` 명령으로 작성하세요."
+        echo "   → \`/solapi-working-backwards:prd-new [기능명]\` 명령으로 작성하세요."
     else
         echo "   → PRFAQ 승인 후 PRD를 작성할 수 있습니다."
     fi
@@ -195,7 +195,7 @@ else
         fi
     done
     if [ "$PRD_APPROVED" = false ]; then
-        echo "   → \`/working-backwards:prd-validate\` 명령으로 검증하세요."
+        echo "   → \`/solapi-working-backwards:prd-validate\` 명령으로 검증하세요."
     fi
 fi
 

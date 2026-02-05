@@ -17,20 +17,20 @@ SOLAPI에서 제공하는 Claude Code 플러그인 모음입니다.
 **3. 사용 시작**
 ```
 # Working Backwards 플러그인으로 새 PRFAQ 생성
-/working-backwards:prfaq-new
+/solapi-working-backwards:prfaq-new
 
 # PRD 문서 생성
-/working-backwards:prd-new
+/solapi-working-backwards:prd-new
 
 # 문서 상태 확인
-/working-backwards:doc-status
+/solapi-working-backwards:doc-status
 ```
 
 ## 플러그인 목록
 
 | 플러그인 | 설명 | 버전 |
 |---------|------|------|
-| [working-backwards](./working-backwards/) | Amazon의 Working Backwards 철학 적용 | 1.0.0 |
+| [solapi-working-backwards](./solapi-working-backwards/) | Amazon의 Working Backwards 철학 적용 | 1.0.0 |
 
 ## 디렉토리 구조
 
@@ -38,7 +38,7 @@ SOLAPI에서 제공하는 Claude Code 플러그인 모음입니다.
 solapi-plugins/
 ├── .claude-plugin/
 │   └── marketplace.json      # 마켓플레이스 매니페스트
-├── working-backwards/        # Working Backwards 플러그인
+├── solapi-working-backwards/ # Working Backwards 플러그인
 │   ├── .claude-plugin/
 │   │   └── plugin.json
 │   ├── skills/
@@ -119,10 +119,6 @@ plugin-name/
 
 - 모든 명령어는 자동으로 `/<plugin-name>:<command>` 형식으로 네임스페이싱됩니다.
 - 플러그인 간 충돌을 방지합니다.
-
-## 기여
-
-이슈와 PR은 [GitHub](https://github.com/solapi/claude-plugins)에서 환영합니다.
 
 ## 라이선스
 

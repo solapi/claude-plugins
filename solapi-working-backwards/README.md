@@ -19,7 +19,7 @@ Amazon의 **Working Backwards** 철학을 Claude Code에서 강제 적용하는 
 git clone https://github.com/solapi/claude-plugins.git
 
 # Claude Code 실행 시 플러그인 로드
-claude --plugin-dir ./claude-plugins/working-backwards
+claude --plugin-dir ./claude-plugins/solapi-working-backwards
 ```
 
 ## 워크플로우
@@ -46,12 +46,12 @@ claude --plugin-dir ./claude-plugins/working-backwards
 
 | 명령어 | 설명 |
 |--------|------|
-| `/working-backwards:prfaq-new [기능명]` | 새 PRFAQ 생성 |
-| `/working-backwards:prfaq-validate` | PRFAQ 검증 |
-| `/working-backwards:prd-new [기능명]` | PRD 생성 |
-| `/working-backwards:prd-validate` | PRD 검증 |
-| `/working-backwards:doc-list` | 문서 목록 조회 |
-| `/working-backwards:doc-status [기능명]` | 승인 상태 확인 |
+| `/solapi-working-backwards:prfaq-new [기능명]` | 새 PRFAQ 생성 |
+| `/solapi-working-backwards:prfaq-validate` | PRFAQ 검증 |
+| `/solapi-working-backwards:prd-new [기능명]` | PRD 생성 |
+| `/solapi-working-backwards:prd-validate` | PRD 검증 |
+| `/solapi-working-backwards:doc-list` | 문서 목록 조회 |
+| `/solapi-working-backwards:doc-status [기능명]` | 승인 상태 확인 |
 
 ## 자동 트리거
 
@@ -156,11 +156,11 @@ Claude: 재검증...
 ## 플러그인 구조
 
 ```
-working-backwards/
+solapi-working-backwards/
 ├── .claude-plugin/
 │   └── plugin.json           # 플러그인 매니페스트
 ├── skills/
-│   └── working-backwards/
+│   └── solapi-working-backwards/
 │       ├── SKILL.md          # 메인 스킬 (자동 트리거)
 │       └── templates/
 │           ├── prfaq-template.md

@@ -1,5 +1,5 @@
 ---
-name: working-backwards
+name: solapi-working-backwards
 description: Amazon의 Working Backwards 철학을 적용하여 기능 구현 전 PRFAQ와 PRD 문서를 작성하고 검증합니다.
 triggers:
   - "기능.*추가"
@@ -64,27 +64,27 @@ ls -la docs/working-backwards/ 2>/dev/null || echo "문서 디렉토리 없음"
 ### 2단계: PRFAQ 작성 또는 확인
 
 **기존 PRFAQ가 없는 경우:**
-- `/working-backwards:prfaq-new [기능명]` 명령으로 새 PRFAQ 생성
+- `/solapi-working-backwards:prfaq-new [기능명]` 명령으로 새 PRFAQ 생성
 
 **기존 PRFAQ가 있는 경우:**
-- `/working-backwards:doc-status [기능명]` 명령으로 상태 확인
+- `/solapi-working-backwards:doc-status [기능명]` 명령으로 상태 확인
 
 ### 3단계: PRFAQ 검증
 
 PRFAQ 작성 후 검증을 수행합니다:
-- `/working-backwards:prfaq-validate` 명령 실행
+- `/solapi-working-backwards:prfaq-validate` 명령 실행
 - validator 에이전트가 5가지 핵심 질문 기반으로 검증
 - **Approved** 또는 **Rejected** 결과 반환
 
 ### 4단계: PRD 작성 (PRFAQ Approved 후)
 
 PRFAQ가 승인된 후에만 PRD 작성이 가능합니다:
-- `/working-backwards:prd-new [기능명]` 명령으로 PRD 생성
+- `/solapi-working-backwards:prd-new [기능명]` 명령으로 PRD 생성
 
 ### 5단계: PRD 검증
 
 PRD 작성 후 검증을 수행합니다:
-- `/working-backwards:prd-validate` 명령 실행
+- `/solapi-working-backwards:prd-validate` 명령 실행
 - PRFAQ와의 일관성 및 기술 완성도 검증
 - **Approved** 또는 **Rejected** 결과 반환
 
@@ -94,8 +94,8 @@ PRD 작성 후 검증을 수행합니다:
 
 ## 템플릿 위치
 
-- PRFAQ 템플릿: `skills/working-backwards/templates/prfaq-template.md`
-- PRD 템플릿: `skills/working-backwards/templates/prd-template.md`
+- PRFAQ 템플릿: `skills/solapi-working-backwards/templates/prfaq-template.md`
+- PRD 템플릿: `skills/solapi-working-backwards/templates/prd-template.md`
 
 ## 문서 저장 위치
 
@@ -110,12 +110,12 @@ docs/working-backwards/
 
 | 명령어 | 설명 |
 |--------|------|
-| `/working-backwards:prfaq-new [기능명]` | 새 PRFAQ 생성 |
-| `/working-backwards:prfaq-validate` | PRFAQ 검증 |
-| `/working-backwards:prd-new [기능명]` | PRD 생성 |
-| `/working-backwards:prd-validate` | PRD 검증 |
-| `/working-backwards:doc-list` | 문서 목록 |
-| `/working-backwards:doc-status [기능명]` | 승인 상태 확인 |
+| `/solapi-working-backwards:prfaq-new [기능명]` | 새 PRFAQ 생성 |
+| `/solapi-working-backwards:prfaq-validate` | PRFAQ 검증 |
+| `/solapi-working-backwards:prd-new [기능명]` | PRD 생성 |
+| `/solapi-working-backwards:prd-validate` | PRD 검증 |
+| `/solapi-working-backwards:doc-list` | 문서 목록 |
+| `/solapi-working-backwards:doc-status [기능명]` | 승인 상태 확인 |
 
 ## 반려 시 대응
 

@@ -39,7 +39,7 @@ PRFAQ 파일: {파일 경로}
 
 다음 단계:
 1. PRFAQ를 완성하세요.
-2. `/working-backwards:prfaq-validate` 명령으로 검증을 받으세요.
+2. `/solapi-working-backwards:prfaq-validate` 명령으로 검증을 받으세요.
 3. Approved 상태가 되면 PRD 생성이 가능합니다.
 ```
 
@@ -51,14 +51,14 @@ PRFAQ 파일: {파일 경로}
 해당 기능의 PRFAQ가 존재하지 않습니다.
 
 다음 단계:
-1. `/working-backwards:prfaq-new {feature_name}` 명령으로 PRFAQ를 먼저 작성하세요.
+1. `/solapi-working-backwards:prfaq-new {feature_name}` 명령으로 PRFAQ를 먼저 작성하세요.
 2. PRFAQ가 승인되면 PRD 생성이 가능합니다.
 ```
 
 ### 2단계: PRD 템플릿 로드
 
 PRD 템플릿을 읽어옵니다:
-- 경로: `skills/working-backwards/templates/prd-template.md`
+- 경로: `skills/solapi-working-backwards/templates/prd-template.md`
 
 ### 3단계: PRFAQ에서 정보 추출
 
@@ -138,7 +138,7 @@ PRD 문서에 PRFAQ 참조 경로를 반드시 포함합니다.
 
 다음 단계:
 1. PRD 내용을 검토하고 필요시 수정하세요.
-2. 준비가 되면 `/working-backwards:prd-validate` 명령으로 검증을 요청하세요.
+2. 준비가 되면 `/solapi-working-backwards:prd-validate` 명령으로 검증을 요청하세요.
 
 검증을 통과해야 구현을 시작할 수 있습니다.
 ```

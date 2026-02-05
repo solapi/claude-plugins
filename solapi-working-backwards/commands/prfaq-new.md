@@ -32,7 +32,7 @@ ls -la docs/working-backwards/PRFAQ-*{feature_name}* 2>/dev/null || echo "기존
 ### 3단계: PRFAQ 템플릿 로드
 
 PRFAQ 템플릿을 읽어옵니다:
-- 경로: `skills/working-backwards/templates/prfaq-template.md`
+- 경로: `skills/solapi-working-backwards/templates/prfaq-template.md`
 
 ### 4단계: 사용자와 대화형 작성
 
@@ -77,7 +77,7 @@ docs/working-backwards/PRFAQ-{feature-slug}-{YYYY-MM-DD}.md
 
 다음 단계:
 1. PRFAQ 내용을 검토하고 필요시 수정하세요.
-2. 준비가 되면 `/working-backwards:prfaq-validate` 명령으로 검증을 요청하세요.
+2. 준비가 되면 `/solapi-working-backwards:prfaq-validate` 명령으로 검증을 요청하세요.
 
 검증을 통과해야 PRD 작성으로 진행할 수 있습니다.
 ```

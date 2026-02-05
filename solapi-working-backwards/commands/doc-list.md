@@ -27,7 +27,7 @@ fi
 아직 PRFAQ/PRD 문서가 작성되지 않았습니다.
 
 시작하기:
-- `/working-backwards:prfaq-new [기능명]` 명령으로 첫 PRFAQ를 작성하세요.
+- `/solapi-working-backwards:prfaq-new [기능명]` 명령으로 첫 PRFAQ를 작성하세요.
 ```
 
 ### 2단계: 문서 목록 수집
@@ -91,16 +91,16 @@ ls -la docs/working-backwards/*.md 2>/dev/null
 문서 상태에 따른 다음 단계 안내:
 
 - **Draft PRFAQ가 있는 경우**:
-  "PRFAQ를 완성하고 `/working-backwards:prfaq-validate` 명령으로 검증하세요."
+  "PRFAQ를 완성하고 `/solapi-working-backwards:prfaq-validate` 명령으로 검증하세요."
 
 - **Rejected PRFAQ가 있는 경우**:
-  "반려된 PRFAQ를 수정하고 재검증하세요. `/working-backwards:doc-status [기능명]`으로 반려 사유를 확인하세요."
+  "반려된 PRFAQ를 수정하고 재검증하세요. `/solapi-working-backwards:doc-status [기능명]`으로 반려 사유를 확인하세요."
 
 - **Approved PRFAQ만 있고 PRD가 없는 경우**:
-  "PRD 작성을 시작하세요: `/working-backwards:prd-new [기능명]`"
+  "PRD 작성을 시작하세요: `/solapi-working-backwards:prd-new [기능명]`"
 
 - **Draft PRD가 있는 경우**:
-  "PRD를 완성하고 `/working-backwards:prd-validate` 명령으로 검증하세요."
+  "PRD를 완성하고 `/solapi-working-backwards:prd-validate` 명령으로 검증하세요."
 
 - **모두 Approved인 기능이 있는 경우**:
   "🎉 구현을 시작할 수 있습니다!"

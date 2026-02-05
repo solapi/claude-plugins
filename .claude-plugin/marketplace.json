@@ -9,9 +9,9 @@
   "license": "MIT",
   "plugins": [
     {
-      "name": "working-backwards",
-      "displayName": "Working Backwards",
-      "source": "./working-backwards",
+      "name": "solapi-working-backwards",
+      "displayName": "Solapi Working Backwards",
+      "source": "./solapi-working-backwards",
       "version": "1.0.0",
       "description": "Amazon의 Working Backwards 철학을 Claude Code에서 강제 적용하는 플러그인"
     }

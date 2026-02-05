@@ -32,8 +32,8 @@ ls -la docs/working-backwards/*{feature_name}*.md 2>/dev/null
 2. 기능 이름이 다르게 지정되었을 수 있습니다.
 
 다음 단계:
-- `/working-backwards:doc-list` 명령으로 전체 문서 목록을 확인하세요.
-- `/working-backwards:prfaq-new {feature_name}` 명령으로 새 PRFAQ를 작성하세요.
+- `/solapi-working-backwards:doc-list` 명령으로 전체 문서 목록을 확인하세요.
+- `/solapi-working-backwards:prfaq-new {feature_name}` 명령으로 새 PRFAQ를 작성하세요.
 ```
 
 ### 3단계: 문서 상태 추출
@@ -115,7 +115,7 @@ PRFAQ 참조: {PRFAQ 파일 경로}
 
 다음 행동:
 1. PRFAQ 문서를 완성하세요.
-2. `/working-backwards:prfaq-validate` 명령으로 검증을 요청하세요.
+2. `/solapi-working-backwards:prfaq-validate` 명령으로 검증을 요청하세요.
 ```
 
 #### PRFAQ Rejected:
@@ -127,7 +127,7 @@ PRFAQ 참조: {PRFAQ 파일 경로}
 
 다음 행동:
 1. 위 반려 사유를 참고하여 PRFAQ를 수정하세요.
-2. `/working-backwards:prfaq-validate` 명령으로 재검증을 요청하세요.
+2. `/solapi-working-backwards:prfaq-validate` 명령으로 재검증을 요청하세요.
 ```
 
 #### PRFAQ Approved, PRD 없음:
@@ -135,7 +135,7 @@ PRFAQ 참조: {PRFAQ 파일 경로}
 📍 현재 단계: PRD 작성 대기
 
 다음 행동:
-1. `/working-backwards:prd-new {feature_name}` 명령으로 PRD를 작성하세요.
+1. `/solapi-working-backwards:prd-new {feature_name}` 명령으로 PRD를 작성하세요.
 ```
 
 #### PRD Draft:
@@ -144,7 +144,7 @@ PRFAQ 참조: {PRFAQ 파일 경로}
 
 다음 행동:
 1. PRD 문서를 완성하세요.
-2. `/working-backwards:prd-validate` 명령으로 검증을 요청하세요.
+2. `/solapi-working-backwards:prd-validate` 명령으로 검증을 요청하세요.
 ```
 
 #### PRD Rejected:
@@ -156,7 +156,7 @@ PRFAQ 참조: {PRFAQ 파일 경로}
 
 다음 행동:
 1. 위 반려 사유를 참고하여 PRD를 수정하세요.
-2. `/working-backwards:prd-validate` 명령으로 재검증을 요청하세요.
+2. `/solapi-working-backwards:prd-validate` 명령으로 재검증을 요청하세요.
 ```
 
 #### PRFAQ + PRD 모두 Approved:

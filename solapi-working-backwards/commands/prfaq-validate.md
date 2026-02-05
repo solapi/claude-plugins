@@ -89,7 +89,7 @@ validator 에이전트(`agents/validator.md`)를 사용하여 검증을 수행�
 - {있는 경우 권장 개선 사항}
 
 다음 단계:
-- `/working-backwards:prd-new {기능명}` 명령으로 PRD 작성을 시작하세요.
+- `/solapi-working-backwards:prd-new {기능명}` 명령으로 PRD 작성을 시작하세요.
 ```
 
 #### 반려 시 출력 형식:
@@ -113,7 +113,7 @@ validator 에이전트(`agents/validator.md`)를 사용하여 검증을 수행�
 
 다음 단계:
 1. 위 반려 사유를 참고하여 PRFAQ를 수정하세요.
-2. 수정 후 다시 `/working-backwards:prfaq-validate` 명령을 실행하세요.
+2. 수정 후 다시 `/solapi-working-backwards:prfaq-validate` 명령을 실행하세요.
 ```
 
 ### 6단계: 문서 업데이트

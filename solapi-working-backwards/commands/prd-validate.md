@@ -44,7 +44,7 @@ PRFAQ 상태: {현재 상태}
 
 다음 단계:
 1. 먼저 PRFAQ를 승인받으세요.
-2. `/working-backwards:prfaq-validate` 명령을 실행하세요.
+2. `/solapi-working-backwards:prfaq-validate` 명령을 실행하세요.
 ```
 
 ### 3단계: validator 에이전트 호출
@@ -155,7 +155,7 @@ PRFAQ-PRD 불일치 항목:
 다음 단계:
 1. 위 반려 사유를 참고하여 PRD를 수정하세요.
 2. PRFAQ와의 일관성을 확인하세요.
-3. 수정 후 다시 `/working-backwards:prd-validate` 명령을 실행하세요.
+3. 수정 후 다시 `/solapi-working-backwards:prd-validate` 명령을 실행하세요.
 ```
 
 ### 7단계: 문서 업데이트
