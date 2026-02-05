@@ -6,12 +6,12 @@ SOLAPI에서 제공하는 Claude Code 플러그인 모음입니다.
 
 **1. 플러그인 마켓플레이스 추가**
 ```
-/plugin marketplace add https://github.com/solapi/claude-plugins
+/plugin marketplace add solapi/claude-plugins
 ```
 
 **2. 플러그인 설치**
 ```
-/plugin install solapi-plugins
+/plugin install solapi-working-backwards@solapi-claude-plugins
 ```
 
 **3. 사용 시작**
